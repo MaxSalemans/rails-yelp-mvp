@@ -21,7 +21,7 @@
     <% @restaurant.reviews.each do |review| %>
     <li class="list-group-item d-flex justify-content-between align-items-center w-50">
       <p class="comment"> <%= review.content %> </p>
-      <p> Rating: <%= review.rating %> </p>
+      <p class='rating'> Rating: <%= review.rating %> </p>
     </li>
     <% end %>
   </ul>
