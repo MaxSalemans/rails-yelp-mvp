@@ -1,0 +1,27 @@
+
+
+
+<div class="d-flex justify-content-between mt-3">
+  <div class='w-50'>
+    <h5>Details</h3>
+
+      <p>Phone: <%= @restaurant.phone_number %></p>
+      <p>Address: <%= @restaurant.address %></p>
+      <p>Kitchen: <%= @restaurant.category.capitalize %></p>
+    </div>
+    <div class="d-flex w-50 align-items-center justify-content-center">
+      <h1> <%= @restaurant.name %> </h1>
+    </div>
+
+  </div>
+  <%= link_to "add new review", new_restaurant_review_path(@restaurant), class: 'btn btn-outline-primary' %>
+
+
+  <ul class="list-group mt-3">
+    <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center w-50">
+      <p class="comment"> <%= review.content %> </p>
+      <p> Rating: <%= review.rating %> </p>
+    </li>
+    <% end %>
+  </ul>
